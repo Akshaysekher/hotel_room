@@ -1,0 +1,105 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Payment Form Widget Flat Responsive Widget Template :: w3layouts</title>
+<!-- for-mobile-apps -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Payment Form Widget Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/static/a/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href='//fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Alegreya+Sans:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+
+</head>
+<body>
+	<div class="main">
+		<h1>Payment Form </h1>
+		<div class="content">
+			
+			
+						<div class="sap_tabs">
+							<div style="width: 100%; margin: 0px;">
+								
+								<div class="resp-tabs-container">
+									<div>
+										<div class="payment-info">
+											<h3>Personal Information</h3>
+											<form action="/payment/" method="post">{% csrf_token %}
+												<div class="tab-for">
+												{% for x in b %}				
+													<h5>EMAIL ADDRESS</h5>
+														<input type="text" value="{{x.i_d.email}}" readonly="">
+													<h5>NAME</h5>													
+														<input type="text" value="{{x.i_d.name}}" readonly="">
+							
+														<h5>Room Number</h5>													
+														<input type="text" value="{{x.r_id.r_number}}" name="rn" readonly="">
+														<input type="text" value="{{x.id}}" name="n" hidden="" readonly="">
+														<h5>Price</h5>													
+														<input type="text" value="{{x.r_id.price}}" readonly="">
+														
+														<h5>Total</h5>													
+														<input type="text" value="{{x.total}}" readonly="">
+													{% endfor %}
+												</div>			
+											
+											<h3 class="pay-title">Credit Card Info</h3>
+											
+												<div class="tab-for">				
+													<h5>NAME ON CARD</h5>
+														<input type="text" value="">
+													<h5>CARD NUMBER</h5>													
+														<input class="pay-logo" type="text" value="0000-0000-0000-0000" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '0000-0000-0000-0000';}" required="">
+												</div>	
+												<div class="transaction">
+													<div class="tab-form-left user-form">
+														<h5>EXPIRATION</h5>
+															<ul>
+																<li>
+																	<input type="number" class="text_box" type="text" value="6" min="1" />	
+																</li>
+																<li>
+																	<input type="number" class="text_box" type="text" value="1988" min="1" />	
+																</li>
+																
+															</ul>
+													</div>
+													<div class="tab-form-right user-form-rt">
+														<h5>CVV NUMBER</h5>													
+														<input type="text" value="xxxx" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'xxxx';}" required="">
+													</div>
+													<div class="clear"></div>
+												</div>
+												<input type="submit" value="SUBMIT">
+											</form>
+											
+										</div>
+									</div>
+									
+											
+
+									</div>
+								</div>	
+							</div>
+						</div>	
+
+		</div>
+		
+	</div>
+</body>
+</html>
